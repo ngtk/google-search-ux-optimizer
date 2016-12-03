@@ -39,6 +39,10 @@ module.exports = {
         loader: 'json'
       },
       {
+        test: /\.pug$/,
+        loader: 'pug'
+      },
+      {
         test: /\.(sass|scss)$/,
         loader: ExtractTextPlugin.extract('css!sass')
       },
