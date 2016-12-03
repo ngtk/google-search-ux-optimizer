@@ -22,9 +22,6 @@ module.exports = {
   },
   resolve: {
     root: path.join(__dirname, `${_src}`),
-    alias: {
-      'vue': 'vue/dist/vue.js'
-    },
     extensions: ['', '.js' , '.scss' , '.vue']
   },
   module: {
