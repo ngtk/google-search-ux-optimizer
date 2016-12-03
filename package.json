@@ -6,6 +6,10 @@
   "repository": "ssh://git@github.com/ngtk/search-simulated-experience.git",
   "author": "Kent Nagata <ngtknt@me.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot",
+    "build": "npm run clean && cross-env NODE_ENV=production webpack --progress --hide-modules"
+  },
   "devDependencies": {
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
