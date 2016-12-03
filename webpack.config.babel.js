@@ -58,7 +58,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin(`${_stylesheets}/[name].css`)
+    new ExtractTextPlugin(`${_stylesheets}/[name].css`),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    })
   ],
   devtool: '#source-map'
 }
