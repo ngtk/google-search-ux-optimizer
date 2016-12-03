@@ -10,7 +10,7 @@ const _static = 'static'
 module.exports = {
   entry: {
     app: `./${_src}/main.js`,
-    vendor: []
+    vendor: ['vue', 'vue-router']
   },
   output: {
     path: path.resolve(__dirname, `./${_dist}`),
@@ -22,10 +22,17 @@ module.exports = {
   },
   resolve: {
     root: path.join(__dirname, `${_src}`),
+    alias: {
+      'vue': 'vue/dist/vue.js'
+    },
     extensions: ['', '.js' , '.scss' , '.vue']
   },
   module: {
     loaders: [
+      {
+        test: /\.vue$/,
+        loader: 'vue'
+      },
       {
         test: /\.js$/,
         loader: 'babel',
@@ -62,6 +69,10 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin(`${_stylesheets}/[name].css`),
+    new webpack.ProvidePlugin({
+      Vue: 'vue',
+      VueRouter: 'vue-router'
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
     })
