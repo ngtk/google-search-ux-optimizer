@@ -3426,6 +3426,14 @@ void-elements@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
+vue-router@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.1.1.tgz#10c31bbdcb6da92bd3e0223fa12345e73018625a"
+
+vue@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.1.4.tgz#d490f8fcf696847d8cf7f8eb9168e9a5dd806bfc"
+
 watchpack@^0.2.1:
   version "0.2.9"
   resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-0.2.9.tgz#62eaa4ab5e5ba35fdfc018275626e3c0f5e3fb0b"
