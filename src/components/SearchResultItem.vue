@@ -1,14 +1,8 @@
 <template lang="pug">
   .search-result-item
-    .result-title(@click="onClickTitle") {{ title }}
-    .result-url(@click="onClickUrl") {{ url }}
-    .result-description(@click="onClickDescription") {{ description }}
-    .user-input.result-title-input.hidden
-      input(v-model="title" @keyup.enter="submitTitle")
-    .user-input.result-url-input.hidden
-      input(v-model="url" @keyup.enter="submitUrl")
-    .user-input.result-description-input.hidden
-      input(v-model="description" @keyup.enter="submitDescription")
+    input.result-title(v-model="title")
+    input.result-url(v-model="url")
+    textarea.result-description(v-model="description")
 </template>
 
 <script>
@@ -22,45 +16,6 @@ export default {
     }
   },
   methods: {
-    onClickTitle: function () {
-      let el = this.$el.getElementsByClassName("result-title-input")[0]
-      let rect = this.$el.getElementsByClassName("result-title")[0].getBoundingClientRect()
-      let x = rect.top + window.pageYOffset - 16
-      let y = rect.right + window.pageXOffset
-      el.style.top = x + "px"
-      el.style.left = y + "px"
-      el.style.visibility = "visible"
-      el.querySelector("input").focus()
-    },
-    submitTitle: function () {
-      this.$el.getElementsByClassName("result-title-input")[0].style.visibility = "hidden"
-    },
-    onClickUrl: function () {
-      let el = this.$el.getElementsByClassName("result-url-input")[0]
-      let rect = this.$el.getElementsByClassName("result-url")[0].getBoundingClientRect()
-      let x = rect.top + window.pageYOffset - 16
-      let y = rect.right + window.pageXOffset
-      el.style.top = x + "px"
-      el.style.left = y + "px"
-      el.style.visibility = "visible"
-      el.querySelector("input").focus()
-    },
-    submitUrl: function () {
-      this.$el.getElementsByClassName("result-url-input")[0].style.visibility = "hidden"
-    },
-    onClickDescription: function () {
-      let el = this.$el.getElementsByClassName("result-description-input")[0]
-      let rect = this.$el.getElementsByClassName("result-description")[0].getBoundingClientRect()
-      let x = rect.top + window.pageYOffset - 16
-      let y = rect.right + window.pageXOffset
-      el.style.top = x + "px"
-      el.style.left = y + "px"
-      el.style.visibility = "visible"
-      el.querySelector("input").focus()
-    },
-    submitDescription: function () {
-      this.$el.getElementsByClassName("result-description-input")[0].style.visibility = "hidden"
-    },
   }
 }
 </script>
@@ -68,6 +23,15 @@ export default {
 <style lang="sass">
 .search-result-item {
   max-width: 600px;
+
+  input, textarea {
+    width: 600px;
+    display: block;
+    border: none;
+      &:focus {
+        outline: none;
+      }
+  }
 }
 
 .result-title {
@@ -96,6 +60,11 @@ export default {
 	font-size: 13px;
 	line-height: 1.4;
 	color: #676767;
+  resize: none;
+
+  &:focus {
+    resize: vertical;
+  }
 }
 
 .hidden {
