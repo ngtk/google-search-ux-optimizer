@@ -1,9 +1,9 @@
 {
-  "name": "search-simulated-experience",
+  "name": "google-search-ux-optimizer",
   "version": "1.0.0",
-  "description": "Google Search Simulated Experience",
+  "description": "Google search UX optimizer",
   "main": "index.js",
-  "repository": "ssh://git@github.com/ngtk/search-simulated-experience.git",
+  "repository": "ssh://git@github.com/ngtk/google-search-ux-optimizer.git",
   "author": "Kent Nagata <ngtknt@me.com>",
   "license": "MIT",
   "scripts": {
